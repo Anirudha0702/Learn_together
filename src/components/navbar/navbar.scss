@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+$logoFont:'Concert One', cursive;
+
+.Navbar{ 
+    width:100vw;
+    display: flex;
+    .logo{
+        position: relative;
+        height:5rem;
+        width:37%;
+        padding: 1.5rem 0 0 7rem;
+        font-family: $logoFont;
+        font-size: 2rem;
+        color:#fff;
+        background: #39C654 url("../../Assets/logo.png") no-repeat;
+        background-position-x: 2rem;
+        background-size: contain;
+    }
+    .navigation{
+        width:70%;
+        height:5rem;
+        position: relative;
+        border-bottom: 4px solid #c5c1c1;
+        .hamburger{
+            display:none;
+        }
+        .navItemContainer{
+            position: absolute;
+            right:0;
+            height:100%;
+            width:31.5rem;
+            padding:1.5rem 0 0 0rem;
+            font-family: serif;
+            font-weight: bold;
+            color:rgba(0, 0, 0, 0.671);
+            .navItem{
+                margin-right: 1rem;
+                font-size: larger;
+                cursor: pointer;
+                &::after{
+                    content:"";
+                    display: block;
+                    height:0.2rem;
+                    width:0;
+                    background-color: rgba(0, 0, 0, 0.671);
+                    transition: all 0.2s ease-in-out;
+                }
+                &:hover{
+                    &::after{
+                        width:100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+///=========MEDIA QUERIESSSSS===========
+@media (max-width:840px){
+    .Navbar{
+        flex-direction: column;
+        .logo{
+            width:100vw;
+            background-position-x: 2rem;
+            padding: 1.5rem 0 0 7rem;
+        }
+        .navigation{
+            width:100vw;
+            height: 2.5rem;
+            .hamburger{
+                z-index: 1000;
+                position: relative;
+                margin: 0.2rem 0.5rem 0 0;
+                width:2.5rem;
+                height:2rem;
+                float:right;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                border: 0.1px solid rgba(0, 0, 0, 0.747);
+                border-radius: 7px;
+                span{
+                    width:1.5rem;
+                    height: 0.2rem;
+                    background-color:  rgba(0, 0, 0, 0.747);
+                    margin: 0.2rem;
+                    position: relative;
+                    &::before,&::after{
+                        content: "";
+                        position:absolute;
+                        display: block;
+                        top:-0.5em;
+                        width:1.5rem;
+                        height: 0.2rem;
+                        background-color:  rgba(0, 0, 0, 0.747);
+                        transition: all 0.3s ease-in-out;
+                    }
+                    &::after{
+                        top:0.5em;
+                    }
+                }
+                &.clicked{
+                    border:none;
+                    background:none;
+                    transition: all 0.3s ease-in-out;
+                    span{
+                        background-color: transparent;
+                        transition: all 0.3s ease-in-out;
+                        &::after{
+                            transform: translate(0,-0.5em) rotate(-45deg);
+                            transition: all 0.3s ease-in-out;
+                            background-color:#fff;
+                        }
+                        &::before{
+                            transition: all 0.3s ease-in-out;
+                            transform: translate(0,0.5em) rotate(45deg);
+                            background-color:#fff;
+                        }
+                    }
+                }
+            }
+            .navItemContainer{
+                background-color: #39C654;
+                overflow-x: hidden;
+                transition: all 0.3s ease-in-out;
+                width:0;
+                height:0;
+                &.clicked{
+                    z-index: 1000;
+                    width:10rem;
+                    height: 20rem;
+                    padding: 3rem 0 0 2rem;
+                    visibility: visible;
+                }
+                .navItem{
+                    display: block;
+                    width:100%;
+                    color:#fff;
+                    margin-top: 0.5rem;
+                    transition: 0.2s ease-in-out;
+                    &:hover{
+                        transform:translateX(0.5rem);
+                        &::after{
+                            width:0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
