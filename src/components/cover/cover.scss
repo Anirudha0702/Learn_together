@@ -1,0 +1,70 @@
+.Cover{
+    height:80vh;
+    width:100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: url("../../Assets/coverImage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .dummy_Cover{
+        position: absolute;
+        width:100%;
+        height:100%;
+        background: rgba(0, 0, 0, 0.548);
+        .desc_Container{
+            position: relative;
+            width:60%;
+            height:100%;
+            font-size: 4rem;
+            padding:3rem;
+            h2{
+                
+                color:#fff;
+                span{
+                    color: #CBD728;
+                }
+            }
+            h3{
+                font-size: 2rem;
+                color:#CBD728;
+            }
+            h6{
+                color:#fff;
+                font-size: 2rem;
+            }
+            .RegisterBtn{
+                position: relative;
+                width:9rem;
+                height:3rem;
+                background:#3824CD;
+                color: #fff;
+                font-weight: bold;
+                border-radius: 20px;
+                border:none;
+                cursor: pointer;
+                z-index: 11;
+                span{
+                    content: "";
+                    position: absolute;
+                    top:0;
+                    display: block;
+                    width:0;
+                    height:100%;
+                    background-color:#CBD728;
+                    border-radius: inherit;
+                    transition: all 0.3s ease-in-out;
+                    z-index: -10;
+                }
+                &:hover{
+                    color: #3824CD;
+                    span{
+                        width:100%;
+                        top:0;
+                    }
+                }
+            }
+        }
+    }
+}
