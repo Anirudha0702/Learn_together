@@ -4,10 +4,10 @@ const Cover=()=>{
         <div className="Cover">
             <div className="dummy_Cover">
                 <div className="desc_Container">
-                    <h2 className="desc">Want to <span>BOOST</span> Your career?</h2>
-                    <h3 className="desc">We are here only for you</h3>
-                    <h6>India's The Most growing E-Learnig Platform</h6>
-                    <button className="RegisterBtn"><span></span>REGISTER NOW</button>
+                    <span className="desc highlighter">Want to <span>BOOST</span> Your career?</span>
+                    <span className="desc sub">We are here only for you</span>
+                    <span>India's The Most growing E-Learnig Platform</span>
+                    <button className="RegisterBtn">REGISTER NOW</button>
                 </div>
             </div>
         </div>
