@@ -72,6 +72,7 @@ $logoFont:'Concert One', cursive;
             height: 2.5rem;
             .hamburger{
                 z-index: 1000;
+                background-color: transparent;
                 position: relative;
                 margin: 0.2rem 0.5rem 0 0;
                 width:2.5rem;
@@ -82,7 +83,7 @@ $logoFont:'Concert One', cursive;
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
-                border: 0.1px solid rgba(0, 0, 0, 0.747);
+                border:none;
                 border-radius: 7px;
                 span{
                     width:1.5rem;
