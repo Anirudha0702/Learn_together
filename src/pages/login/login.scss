@@ -1,0 +1,84 @@
+.Login{
+    width:100vw;
+    height: 100vh;
+    background:linear-gradient(to bottom, #3824CD,rgb(247, 0, 255));
+    .login_container{
+        position: relative;
+        top:50%;
+        left:50%;
+        padding-top: 1.5rem;
+        transform: translate(-50%,-50%);
+        height:19rem;
+        width:21rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        background: rgb(255, 255, 255);
+        box-shadow: 2px 5px 5px 0 rgba(0, 0, 0, 0.658);
+        .person{
+            color: rgba(255, 255, 255, 0.87);
+            transform: scale(3);
+            position: relative;
+            top:-2.5rem;
+            border-radius: 50%;
+            background-color: rgb(26, 24, 24);
+        }
+        #rememberMe{
+            position: relative;
+            left:-6rem;
+            font-size: small;
+            color: rgb(145, 145, 145);
+            #chkbx{
+                cursor: pointer;
+            }
+        }
+        .linkconatiner{
+            color:#3824CD;
+            text-decoration: underline;
+            display: flex;
+            justify-content: space-between;
+            width:80%;
+            font-size: small;
+            margin-bottom: 1rem;
+        }
+       .inpBox{
+        position: relative;
+        width:90%;
+        height:2rem;
+        border:none;
+        padding: 1em;
+        margin-bottom: 1rem;
+        background: none;
+        color: rgb(145, 145, 145);
+        font-size: 1em;
+        border-bottom: 1px solid rgb(0, 0, 0);
+        &:focus{
+            outline:none;
+        }
+        &::placeholder{
+            color:rgb(131, 127, 127);
+        }
+       }
+       .sign_in{
+        width:80%;
+        height:2rem;
+        border: none;
+        margin: 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        color:rgb(255, 255, 255);
+        background-color: blue;
+        font-weight: bold;
+       }
+       .Icon{
+        display: inline;
+        background-color: #fff;
+        margin: 0 1rem 0 1rem;
+        color:rgb(16, 19, 212);
+        border-radius: 5px;
+       }
+    }
+}
