@@ -17,7 +17,7 @@
         border-top-right-radius: 40px;
         border-bottom-left-radius: 40px;
         background: rgb(255, 255, 255);
-        box-shadow: 2px 5px 5px 0 rgba(0, 0, 0, 0.658);
+        
         .person{
             color: rgba(255, 255, 255, 0.87);
             transform: scale(3);
@@ -77,8 +77,9 @@
         display: inline;
         background-color: #fff;
         margin: 0 1rem 0 1rem;
-        color:rgb(16, 19, 212);
+        color:#0144fd;
         border-radius: 5px;
+        cursor: pointer;
        }
     }
 }
