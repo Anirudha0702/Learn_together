@@ -1,5 +1,5 @@
 import  "./register.scss"
-import { Facebook , LinkedIn, Person, Twitter} from "@material-ui/icons";
+import { Facebook , LinkedIn, Twitter} from "@material-ui/icons";
 
 const Register=()=>{
     return (
