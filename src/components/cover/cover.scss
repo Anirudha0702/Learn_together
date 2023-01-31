@@ -13,13 +13,20 @@
         width:100%;
         height:100%;
         background: rgba(0, 0, 0, 0.733);
+        display: flex;
+        justify-content: center;
+        align-items: center;
         .desc_Container{
             position: relative;
             width:60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             height:100%;
-            padding:3rem;
-            .highlighter{
-                font-size: 3rem;
+            text-align: center;
+            .highlighter{//BOOST
+                font-size: 4rem;
                 font-weight: bolder;
                 display: block;
                 color:#fff;
@@ -43,7 +50,9 @@
                 margin-bottom: 2rem;
             }
             .RegisterBtn{
+                display: block;
                 position: relative;
+                // top:2rem;
                 width:9rem;
                 height:3rem;
                 background:#3824CD;
@@ -53,24 +62,25 @@
                 border:none;
                 cursor: pointer;
                 z-index: 11;
-                ::after{
+                span{
                     content: "";
                     position: absolute;
-                    
-                    left:0;
+                    top:-1rem;
+                    left:-1rem;
                     display: block;
-                    width:0;
+                    width:0%;
                     height:100%;
                     background-color:#CBD728;
-                    border-radius: 20px;
+                    border-radius: inherit;
                     transition: all 0.3s ease-in-out;
-                    z-index: 100;
+                    z-index: -10;
                 }
                 &:hover{
-                    ::after{
-                        
+                    color: #3824CD;
+                    span{
                         width:100%;
-                        top:0;
+                        top:-1rem;
+                        left:-1rem;
                     }
                 }
             }
@@ -87,7 +97,8 @@
             .desc_Container{
                 width:100%;
                 height:100%;
-                padding: 2.5rem;
+                
+                
                 .highlighter{
                    font-size: 3rem;
                    span{
@@ -101,15 +112,6 @@
                 span{
                     font-size: 1.3rem;
                 }
-            }
-        }
-    }
-}
-@media (max-width:370px){
-    .cover{
-        .dummy_Cover{
-            .desc_Container{
-                padding: 1rem;
             }
         }
     }

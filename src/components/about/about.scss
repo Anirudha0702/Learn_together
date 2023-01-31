@@ -1,5 +1,5 @@
 .About{
-    overflow-x: hidden;
+    // overflow-x: hidden;s
     width:100vw;
     display: flex;
     background-color: #000;
@@ -22,8 +22,7 @@
         padding-top: 4rem;
         background-color: #000;
         color:#fff;
-        font-size: 1.2rem;
-        overflow: hidden;
+        font-size: 1rem;
         h3{
             text-align: left;
             font-weight: bold;
@@ -33,7 +32,7 @@
         .seeMore{
             display: block;
             position: relative;
-            top:2rem;
+            top:1rem;
             width:9rem;
             height:3rem;
             background:#3824CD;
