@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./navbar.scss"
+import logo from "../../Assets/logo.png"
 const Navbar=()=>{
     const [clicked,setClick]=useState(false);
     const  handleOpen=()=>{
@@ -8,19 +9,21 @@ const Navbar=()=>{
    
     return( 
         <div className="Navbar">
-            <div className="logo">LearnTogether</div>
-            <div className="navigation">
-                <ol className={clicked?"navItemContainer clicked":"navItemContainer"}>
-                    <li className="navItem">Home</li>
-                    <li className="navItem">About</li>
-                    <li className="navItem">Courses</li>
-                    <li className="navItem">Events</li>
-                    <li className="navItem">Downloads</li>
-                    <li className="navItem">Contact Us</li>
+            <div className="logo">
+                <img src={logo} alt="" />
+                <span className="text">Learn Together</span>
+            </div>
+            <div className="navItemContainer">
+                <div className={clicked?"hamburgerMenu clicked":"hamburgerMenu"} onClick={handleOpen}>
+                    <span className="line"></span>
+                </div>
+                <ol className={clicked?"navList click":"navList"}>
+                    <li className="item">Home</li>
+                    <li className="item">Courses</li>
+                    <li className="item">About</li>
+                    <li className="item">Contact Us</li>
+                    <li ><button className="login">Login</button></li>
                 </ol>
-                <button className={clicked?"hamburger clicked":"hamburger"} id="Hamburger" onClick={handleOpen}>
-                    <span className="line" id="line1">&nbsp;</span>
-                </button>      
             </div>
         </div>
     )}

@@ -1,156 +1,155 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 $logoFont:'Concert One', cursive;
-
-.Navbar{ 
+// color:#3824CD;
+.Navbar{
     width:100vw;
+    height:3rem;
+    background-color: #3824CD;
     display: flex;
+    justify-content: space-between;
     .logo{
-        position: relative;
-        height:5rem;
-        width:37%;
-        padding: 1.5rem 0 0 7rem;
-        font-family: $logoFont;
-        font-size: 2rem;
-        color:#fff;
-        background: #3824CD url("../../Assets/logo.png") no-repeat;
-        background-position-x: 2rem;
-        background-size: contain;
-    }
-    .navigation{
-        width:70%;
-        height:5rem;
-        position: relative;
-        border-bottom: 4px solid #c5c1c1;
-        .hamburger{
-            display:none;
+        height:100%;
+        width:18rem;
+        display: flex;
+        justify-content: space-between;
+        img{
+            height:2.5rem;
+            width:2.5rem;
+            margin:1rem;
+            margin-top: 0.3rem;
         }
-        .navItemContainer{
-            position: absolute;
-            right:0;
-            height:100%;
-            width:31.5rem;
-            padding:1.5rem 0 0 0rem;
-            font-family: serif;
-            font-weight: bold;
-            color:rgba(0, 0, 0, 0.671);
-            .navItem{
-                margin-right: 1rem;
-                font-size: larger;
+        .text{
+            font-weight: bolder;
+            font-size: 2rem;
+            font-family: $logoFont;
+            margin: 0.3rem 0 0 0;
+            color:#fff;
+        }
+    }
+    .navItemContainer{
+        height: 100%;
+        width:25rem;
+        position: relative;
+        text-align: center;
+        .hamburgerMenu{
+            display: none;
+        }
+        .navList{
+            .item{
+                margin: 0.8rem 0.7rem 0 0;
                 cursor: pointer;
+                color:#fff;
+                font-weight: bolder;
+                
                 &::after{
-                    content:"";
+                    content: "";
                     display: block;
+                    position: relative;
+                    width:0%;
                     height:0.2rem;
-                    width:0;
-                    background-color: rgba(0, 0, 0, 0.671);
-                    transition: all 0.2s ease-in-out;
+                    background-color: #fff;
+                    transition: 0.2s ease-in-out;
                 }
-                &:hover{
-                    &::after{
-                        width:100%;
-                    }
+                &:hover::after{
+                    width:100%;
                 }
+            }
+            .login{
+                width:3rem;
+                height:1rem;
+                background-color: #fff;
+                border: none;
+                border-radius: 5px;
+                color:#3824CD;
+                cursor: pointer;
             }
         }
     }
 }
 
-
-
-
-///=========MEDIA QUERIESSSSS===========
-@media (max-width:840px){
+// ========Responsive Desgin========
+@media(max-width:700px){
     .Navbar{
-        flex-direction: column;
         .logo{
-            width:100vw;
-            background-position-x: 2rem;
-            padding: 1.5rem 0 0 7rem;
-        }
-        .navigation{
-            width:100vw;
-            height: 2.5rem;
-            .hamburger{
-                z-index: 1000;
-                background-color: transparent;
+            .text{
+                font-size: 1.5rem;
+                left:-3rem;
                 position: relative;
-                margin: 0.2rem 0.5rem 0 0;
-                width:2.5rem;
-                height:2rem;
-                float:right;
+            }
+        }
+        .navItemContainer{
+            width:4rem;
+            position: relative;
+            background-color: #0c0068;
+            .navList{
+                margin-top: -0.1rem;
+                padding: 1.2rem;
+                height:20rem;
+                width:10rem;
+                transition: 0.2s ease-in-out;
+                transform: scaleX(0);
+                .item{
+                    display: block;
+                    margin-bottom: 1rem;
+                    &::after{
+                        display: none;
+                    }
+                }
+               &.click{
+                transform: scaleX(1);
+                translate: -6rem;
+                background-color: #0c0068;
+               }
+            }
+            .hamburgerMenu{
+                height:90%;
+                position: relative;
                 display: flex;
-                flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                flex-direction: column;
+                width:90%;
+                margin:0.1rem auto;
                 cursor: pointer;
-                border:none;
-                border-radius: 7px;
+                
                 span{
-                    width:1.5rem;
-                    height: 0.2rem;
-                    background-color:  rgba(0, 0, 0, 0.747);
-                    margin: 0.2rem;
-                    position: relative;
-                    &::before,&::after{
-                        content: "";
-                        position:absolute;
+                    width:70%;
+                    height:0.3rem;
+                    background-color: #fff;
+                    display: block;
+                    border-radius: 20px;
+                    transition: all 0.2s ease-in-out;
+                    &::after,&::before{
                         display: block;
-                        top:-0.5em;
-                        width:1.5rem;
-                        height: 0.2rem;
-                        background-color:  rgba(0, 0, 0, 0.747);
-                        transition: all 0.3s ease-in-out;
+                        content: "";
+                        position: absolute;
+                        border-radius: 20px;
+                        height:0.3rem;
+                        width:70%;
+                        background-color: #fff;
+                        transition: all 0.2s ease-in-out;
+                    }
+                    &::before{
+                        top: 6px;
                     }
                     &::after{
-                        top:0.5em;
+                        top:2.1rem;
                     }
-                }
-                &.clicked{
-                    border:none;
-                    background:none;
-                    transition: all 0.3s ease-in-out;
+               }
+               &.clicked{
+                background-color: #0c0068;
                     span{
-                        background-color: transparent;
-                        transition: all 0.3s ease-in-out;
+                        height:0;
                         &::after{
-                            transform: translate(0,-0.5em) rotate(-45deg);
-                            transition: all 0.3s ease-in-out;
-                            background-color:#fff;
+                            transform-origin: 5% -100%;
+                            transform: rotate(-45deg);
                         }
                         &::before{
-                            transition: all 0.3s ease-in-out;
-                            transform: translate(0,0.5em) rotate(45deg);
-                            background-color:#fff;
+                            transform-origin: 15% 200%;
+                            transform: rotate(45deg);
                         }
                     }
-                }
-            }
-            .navItemContainer{
-                background-color: #3824CD;
-                overflow-x: hidden;
-                transition: all 0.3s ease-in-out;
-                width:0;
-                height:0;
-                &.clicked{
-                    z-index: 1000;
-                    width:10rem;
-                    height: 20rem;
-                    padding: 3rem 0 0 2rem;
-                    visibility: visible;
-                }
-                .navItem{
-                    display: block;
-                    width:100%;
-                    color:#fff;
-                    margin-top: 0.5rem;
-                    transition: 0.2s ease-in-out;
-                    &:hover{
-                        transform:translateX(0.5rem);
-                        &::after{
-                            width:0;
-                        }
-                    }
-                }
+               }
             }
         }
     }
