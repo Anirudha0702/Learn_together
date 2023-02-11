@@ -1,7 +1,11 @@
 .Login{
     width:100vw;
     height: 100vh;
-    background:linear-gradient(to bottom , #3824CD,#000000);    .login_container{
+    background-image: linear-gradient(rgba(3, 3, 3, 0.384), rgba(0, 0, 0, 0.425)), url("../../Assets/coverdemo.jpg"); 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;  
+    .login_container{
         position: relative;
         top:50%;
         left:50%;
@@ -15,7 +19,7 @@
         flex-wrap: wrap;
         border-top-right-radius: 40px;
         border-bottom-left-radius: 40px;
-        background: rgb(255, 255, 255);
+        //background: rgba(255, 255, 255, 0.555);
         
         .person{
             color: rgba(255, 255, 255, 0.87);
@@ -29,15 +33,16 @@
             position: relative;
             left:-6rem;
             font-size: small;
-            color: rgb(145, 145, 145);
+            color: rgb(255, 255, 255);
             #chkbx{
                 cursor: pointer;
             }
         }
         .linkconatiner{
-            color:#3824CD;
+            color:rgb(255, 255, 255);
             text-decoration: underline;
             display: flex;
+            cursor: pointer;
             justify-content: space-between;
             width:80%;
             font-size: small;
@@ -51,14 +56,14 @@
         padding: 1em;
         margin-bottom: 1rem;
         background: none;
-        color: rgb(145, 145, 145);
+        color: rgb(255, 255, 255);
         font-size: 1em;
-        border-bottom: 1px solid rgb(0, 0, 0);
+        border-bottom: 1px solid rgb(255, 255, 255);
         &:focus{
             outline:none;
         }
         &::placeholder{
-            color:rgb(131, 127, 127);
+            color:rgb(255, 255, 255);
         }
        }
        .sign_in{
