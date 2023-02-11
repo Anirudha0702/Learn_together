@@ -4,7 +4,7 @@
 /node_modules
 /.npmrc
 /.pnp
-/src/Assets/log.file
+
 .pnp.js
 # testing
 /coverage
