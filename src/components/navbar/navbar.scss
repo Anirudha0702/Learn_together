@@ -82,12 +82,14 @@ $logoFont:'Concert One', cursive;
             position: relative;
             background-color: #0c0068;
             .navList{
+                position: relative;
                 margin-top: -0.1rem;
                 padding: 1.2rem;
                 height:20rem;
                 width:10rem;
                 transition: 0.2s ease-in-out;
                 transform: scaleX(0);
+                z-index: 100;
                 .item{
                     display: block;
                     margin-bottom: 1rem;
@@ -97,8 +99,10 @@ $logoFont:'Concert One', cursive;
                 }
                &.click{
                 transform: scaleX(1);
+
                 translate: -6rem;
                 background-color: #0c0068;
+                
                }
             }
             .hamburgerMenu{
