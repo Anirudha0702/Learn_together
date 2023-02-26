@@ -1,4 +1,4 @@
-// import About from "../../components/about/About";
+import About from "../../components/about/About";
 import Courses from "../../components/courses/Courses";
 import Cover from "../../components/cover/Cover";
 import Navbar from "../../components/navbar/Navbar";
@@ -11,6 +11,7 @@ const Home=()=>{
           <Navbar/>
           <Cover/>
           <Courses/>
+          <About/>
         </div>
     )
 }

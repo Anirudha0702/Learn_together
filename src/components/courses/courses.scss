@@ -38,6 +38,9 @@
             background: rgb(48, 206, 48);
             color:#fff;
             cursor: pointer;
+            &:hover{
+                background-color: rgba(48, 206, 48, 0.63);
+            }
         }
     }
     .course--container{
@@ -82,8 +85,13 @@
                     color:#fff;
                     font-size: 1.2rem;
                     background-color: #3824CD;
+                    transition: all 0.3s ease-in-out;
                     cursor: pointer;
+                    &:hover{
+                        background-color: #3824cda2;
+                    }
                 }
+                
             }
         }
 
