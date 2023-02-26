@@ -1,15 +1,35 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import "./cover.scss";
 const Cover=()=>{
+  let string="Education for you and me today, will make a better world tomorrow.";
+  // for you and me today, will make a better world tomorrow.
+  const [text,setText]=useState("E");
+  const [index,setIndex]=useState(1);
+  const [reversed,setReversed]=useState(false);
+  useEffect(()=>{
+    setTimeout(() => {
+      if(reversed){
+        
+        setText(string.slice(0,index))
+        setIndex(index-1);
+        setReversed((index===1)?false:true);
+      }
+      else{
+        setText(string.slice(0,index));
+        setIndex(index+1);
+        setReversed((index===string.length-1)?true:false);
+
+      }
+        }, 70);
+   });
     return(
         <div className="Cover">
-            <div className="dummy_Cover">
-                <div className="desc_Container">
-                    <span className="desc highlighter">Want to <span>BOOST</span> Your career?</span>
-                    <span className="desc sub">We are here only for you</span>
-                    <span>India's The Most growing E-Learnig Platform</span>
-                    <button className="RegisterBtn"><span></span>REGISTER NOW</button>
-                </div>
-            </div>
+          <div className="descContainer">
+              <span>{text}</span>
+              <div className="btnContainer">
+              </div>
+          </div>
         </div>
     )
 }
