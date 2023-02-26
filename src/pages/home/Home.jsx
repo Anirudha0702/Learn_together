@@ -1,4 +1,5 @@
 // import About from "../../components/about/About";
+import Courses from "../../components/courses/Courses";
 import Cover from "../../components/cover/Cover";
 import Navbar from "../../components/navbar/Navbar";
 //import Login from "../login/Login"
@@ -9,6 +10,7 @@ const Home=()=>{
         <div className="Home">
           <Navbar/>
           <Cover/>
+          <Courses/>
         </div>
     )
 }
