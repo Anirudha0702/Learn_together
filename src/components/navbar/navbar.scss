@@ -3,7 +3,8 @@ $logoFont:'Concert One', cursive;
 .Navbar{
     width:100vw;
     height:3rem;
-    background-color: #3824CD;
+    background: linear-gradient(to top right,#3824CD,rgb(9, 209, 132));
+
     display: flex;
     justify-content: space-between;
     .logo{

@@ -4,7 +4,9 @@ $logoFont:'Concert One', cursive;
     width:100vw;
     display: flex;
     color:#fff;
-    background-color: rgb(9, 209, 132);
+    // background-color: rgb(9, 209, 132);
+    background: linear-gradient(to bottom right,#3824CD,rgb(9, 209, 132),#3824CD);
+
     flex-direction:column;
     align-items: center;
     .container{
