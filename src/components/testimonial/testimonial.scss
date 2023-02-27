@@ -1,0 +1,65 @@
+$displayFont:'Playball', cursive;
+.Testimonial{
+    margin-top: 2rem;
+    width:100svw;
+    height:70svh;
+    position: relative;
+    .heading{
+        display: block;
+        width:90%;
+        height:8svh;
+        color:#3824CD;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 0.5rem;
+        padding-left: 1rem;
+        border:1px solid blue;
+        margin:auto;
+    }
+    .testimonial__container{
+        top:50%;
+        transform: translate(0,-60%);
+        position: relative;
+        width: 90%;
+        height: 51svh;
+        margin:auto;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .testimonial--display{
+            font-family: $displayFont;
+            position: relative;
+            display: block;
+            min-width: 7rem;
+            height: 35%;
+            margin: 1.5rem;
+            padding: 1rem;
+            overflow-wrap: break-word;
+            font-size: 1.5em;
+            background: linear-gradient(9deg,#3824CD,rgb(9, 209, 132));
+            color:rgb(255, 255, 255);
+            box-shadow: 0px 0px 10px #000000be;
+            border-radius: 20px;
+            h6{
+                text-align: right;
+            }
+            .image{
+                position: absolute;
+                width:4rem;
+                height: 4rem;
+                border-radius: 50%;
+                left:1rem;
+                top:-3rem;
+                img{
+                    width:100%;
+                    height:100%;
+                    border-radius: inherit;
+
+                }
+            }
+        }
+    }
+}
