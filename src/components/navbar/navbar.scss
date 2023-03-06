@@ -1,44 +1,52 @@
-$logoFont:'Concert One', cursive;
-// color:#3824CD;
+@import "../../app.scss";
 .Navbar{
     width:100vw;
     height:3rem;
-    background: linear-gradient(to top right,#3824CD,rgb(9, 209, 132));
-
     display: flex;
     justify-content: space-between;
     .logo{
         height:100%;
-        width:18rem;
+        width:15rem;
         display: flex;
-        justify-content: space-between;
-        img{
+        justify-content:space-around;
+        align-items: center;
+        z-index: 100;
+        margin-left: 1.5rem;
+        // background-color: red;
+        .logoImg{
             height:2.5rem;
             width:2.5rem;
-            margin:1rem;
-            margin-top: 0.3rem;
+            padding:0.5rem;
+            color:var(--acent-clr_bright);
+            border-radius: 50%;
+            box-shadow: 0 0 5px var(--acent-clr_dull);
+            border:2px solid #fff;
+            transform: scale(1.4);
+
         }
         .text{
             font-weight: bolder;
-            font-size: 2rem;
-            font-family: $logoFont;
-            margin: 0.3rem 0 0 0;
-            color:#fff;
+            font-size: clamp(1rem,2vw,2rem);
+            font-family: var(--logoFont);
+            color:#ffffff;
         }
     }
     .navItemContainer{
         height: 100%;
-        width:25rem;
+        width:30rem;
         position: relative;
         text-align: center;
         .hamburgerMenu{
             display: none;
         }
         .navList{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
             .item{
-                margin: 0.8rem 0.7rem 0 0;
                 cursor: pointer;
                 color:#fff;
+                font-size: 1.2rem;
                 font-weight: bolder;
                 
                 &::after{
@@ -47,21 +55,24 @@ $logoFont:'Concert One', cursive;
                     position: relative;
                     width:0%;
                     height:0.2rem;
-                    background-color: #fff;
+                    background-color: var(--acent-clr_bright);
                     transition: 0.2s ease-in-out;
                 }
                 &:hover::after{
                     width:100%;
                 }
-            }
-            .login{
-                width:3rem;
-                height:1rem;
-                background-color: #fff;
-                border: none;
-                border-radius: 5px;
-                color:#3824CD;
-                cursor: pointer;
+                .profile{
+                    position: relative;
+                    width:2.5rem;
+                    height:2.5rem;
+                    z-index: 100;
+                    .img{
+                        position: absolute;
+                        width: 100%;
+                        height:100%;
+                         left:0;
+                    }  
+                }
             }
         }
     }
@@ -73,36 +84,44 @@ $logoFont:'Concert One', cursive;
         .logo{
             .text{
                 font-size: 1.5rem;
-                left:-3rem;
                 position: relative;
+                
             }
         }
         .navItemContainer{
-            width:4rem;
+            width:3rem;
             position: relative;
-            background-color: #0c0068;
+            background-color: var(--acent-clr_bright);
+            box-shadow: 0 0 5px var(--acent-clr_dull);
+            margin-right: 1rem;
+            border-radius: 5px;
             .navList{
                 position: relative;
-                margin-top: -0.1rem;
+                margin-top: -5rem;
                 padding: 1.2rem;
-                height:20rem;
-                width:10rem;
+                padding-top: 5rem;
+                height:25rem;
+                width:15rem;
+                opacity: 1;
                 transition: 0.2s ease-in-out;
-                transform: scaleX(0);
                 z-index: 100;
-                .item{
-                    display: block;
+                flex-direction: column;
+                flex-wrap: wrap;
+                background-color:var(--acent-clr_bright);
+                transform:  scaleX(0);
+                .item,.login{
                     margin-bottom: 1rem;
+                    color:var(--primary-clr_dark);
+                    display: block;
                     &::after{
                         display: none;
                     }
                 }
                &.click{
-                transform: scaleX(1);
-
-                translate: -6rem;
-                background-color: #0c0068;
-                
+                    transform: scaleX(1) translateX(-10rem);
+                    .item,.login{
+                        display: block;
+                    }
                }
             }
             .hamburgerMenu{
@@ -115,11 +134,11 @@ $logoFont:'Concert One', cursive;
                 width:90%;
                 margin:0.1rem auto;
                 cursor: pointer;
-                
+                z-index: 110;
                 span{
                     width:70%;
                     height:0.3rem;
-                    background-color: #fff;
+                    background-color:var(--primary-clr_dark);
                     display: block;
                     border-radius: 20px;
                     transition: all 0.2s ease-in-out;
@@ -130,27 +149,26 @@ $logoFont:'Concert One', cursive;
                         border-radius: 20px;
                         height:0.3rem;
                         width:70%;
-                        background-color: #fff;
+                        background-color:inherit;
                         transition: all 0.2s ease-in-out;
                     }
                     &::before{
-                        top: 6px;
+                        top: 8px;
                     }
                     &::after{
-                        top:2.1rem;
+                        top:2rem;
                     }
                }
                &.clicked{
-                background-color: #0c0068;
                     span{
                         height:0;
+                        &::before{
+                            transform-origin: 0% 200%;
+                            transform: rotate(45deg);
+                        }
                         &::after{
                             transform-origin: 5% -100%;
                             transform: rotate(-45deg);
-                        }
-                        &::before{
-                            transform-origin: 15% 200%;
-                            transform: rotate(45deg);
                         }
                     }
                }

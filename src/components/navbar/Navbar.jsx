@@ -1,16 +1,16 @@
 import { useState } from "react";
 import "./navbar.scss"
-import logo from "../../Assets/logo.png"
+import profileImg from "../../Assets/people.png"
+import { AccountCircle, People, SchoolSharp } from "@material-ui/icons";
 const Navbar=()=>{
     const [clicked,setClick]=useState(false);
     const  handleOpen=()=>{
         setClick(!clicked);
     }
-   
     return( 
         <div className="Navbar">
             <div className="logo">
-                <img src={logo} alt="" />
+                <SchoolSharp className="logoImg"/>
                 <span className="text">Learn Together</span>
             </div>
             <div className="navItemContainer">
@@ -22,7 +22,7 @@ const Navbar=()=>{
                     <li className="item">Courses</li>
                     <li className="item">About</li>
                     <li className="item">Contact Us</li>
-                    <li ><button className="login">Login</button></li>
+                    <li className="item"><div className="profile"><AccountCircle className="img"/></div></li>
                 </ol>
             </div>
         </div>
