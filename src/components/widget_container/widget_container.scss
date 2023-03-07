@@ -1,0 +1,44 @@
+@import "../../App.scss";
+.Widget_container{
+    position: relative;
+    width:90vw;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: auto;
+    margin-top: -5rem;
+    .Widget{
+        position: relative;
+        width:25%;
+        height:12rem;
+        margin: 1rem;
+        background-color: var(--acent-clr_bright);
+        box-shadow: 0 3px 5px  var(--clr_light);
+        border-radius: 5px;
+        text-align: center;
+        color:var(--clr_dark);
+        font-size: clamp(1rem,1.2vw,1.2rem);
+        .Icon{
+            position: relative;
+            width:2.5rem;
+            height:2.5rem;
+            margin: 0.5rem;
+            color:var(--primary-clr_light);
+        }
+        p{
+            margin: 0.5rem;
+            font-size: 1rem;
+        }
+        
+    }
+}
+@media(max-width:750px){
+    .Widget_container{
+        .Widget{
+            width:100%;
+            height:12rem;
+        }
+    }
+}
