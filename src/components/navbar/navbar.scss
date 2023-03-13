@@ -2,14 +2,11 @@
 .Navbar{
     width:100vw;
     height:3rem;
-    display: flex;
-    justify-content: space-between;
+    @include flex(space-between,center);
     .logo{
         height:100%;
         width:15rem;
-        display: flex;
-        justify-content:space-around;
-        align-items: center;
+        @include flex(space-around,center);
         z-index: 100;
         margin-left: 1.5rem;
         // background-color: red;
@@ -40,9 +37,7 @@
             display: none;
         }
         .navList{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+            @include flex(space-around,center);
             .item{
                 cursor: pointer;
                 color:#fff;
@@ -127,9 +122,7 @@
             .hamburgerMenu{
                 height:90%;
                 position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include flex(center,center);
                 flex-direction: column;
                 width:90%;
                 margin:0.1rem auto;
