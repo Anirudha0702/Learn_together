@@ -9,3 +9,13 @@
 --logoFont:'Bebas Neue', cursive;
 
 }
+@mixin flex($justify,$aligin){
+    display: flex;
+    justify-content: $justify;;
+    align-items: $aligin;
+}
+@mixin position($TOP,$LEFT,$t_X,$T_Y){
+    top:$X;
+    left:$LEFT;
+    transform: translate($t_X,$T_Y);
+}
