@@ -15,8 +15,17 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        clip-path: polygon(0 100%, 0 0, 100% 0, 73% 100%);
-        -webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 73% 100%);
+        &::after{
+            position: absolute;
+            content: "";
+            right:0;
+            width:0;
+            height:0;
+            display: block;
+            border-left: 10rem solid transparent;
+            border-bottom :100vh solid var(--acent-clr_bright);
+        }
+
     }
     .login_container{
         background-color: var(--acent-clr_bright);
