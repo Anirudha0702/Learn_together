@@ -1,78 +1,150 @@
-$logoFont:'Concert One', cursive;
+@import "../../App.scss";
 .Footer{
     position: relative;
     width:100vw;
-    display: flex;
-    color:#fff;
-    // background-color: rgb(9, 209, 132);
-    background: linear-gradient(to bottom right,#3824CD,rgb(9, 209, 132),#3824CD);
-
-    flex-direction:column;
-    align-items: center;
-    .container{
+    color:var(--acent-clr_bright);
+    @include flex(center,center);
+    flex-direction: column;
+    background: linear-gradient(70deg,var(--primary-clr_dark__Alpha),var(--primary-clr_light__Alpha)),url("../../Assets/footer_img.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .quote{
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width:90%;
-        padding: 1rem;
-        border-bottom: 1px solid #fff;
-        
-        .flx{
-            height:100%;
-            width:18rem;
-            margin: 1rem;
-        }
-        .logo{
-
-            img{
-                height:4rem;
-                width:4rem;
-                margin:1rem;
-                margin-top: 0.3rem;
+        width:100%;
+        height: 30rem;
+        @include flex(center,center);
+        flex-direction: column;
+        span{
+            position: relative;
+            max-width: 50rem;
+            padding:2rem;
+            text-align: center;
+            font-size: clamp(1rem,3vw,2rem);
+            color:var(--acent-clr_bright);
             }
-            .text{
-                font-weight: bolder;
-                font-size: 2rem;
-                font-family: $logoFont;
-                margin: 0.3rem 0 0 0;
-               
-            }
-        }
-        .contact{
-            .Icon{
-                display: block;
-            }
-        }
-        .feedback{
-            textarea{
-                width:100%;
-                height:7rem;
-                resize: none;
-                padding: 0.5rem;
-                &:focus{
-                    outline: none;
-                }
-            }
-            button{
-                border: none;
-                width: 5rem;
-                height:2rem;
-                border-radius: 10px;
-                background: #3824CD;
-                color:#fff;
-                font-weight: 700;
+        .btn{
+            position: relative;
+            width:15rem;
+            height: 2.5rem;
+            margin: 0.5rem 0 2rem 0;
+            border: none;
+            border-radius: 20px;
+            color:var(--primary-clr_light);
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+            &:hover{
+                transform: scale(1.2);
+                box-shadow: 0 0 5px var(--acent-clr_dull);
             }
         }
     }
-    .linkContainer{
-        margin: 1rem auto;
-        height:3rem;
-        width:7rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    .container{
+        background-color: var(--primary-clr_dark);
+        width:100%;
+        .SiteDetails_Container{
+            position: relative;
+            width:100%;
+            @include flex(center,center);
+            border-bottom: 1px solid #fff;
+            gap: 0.5rem;
+            .grid_Item{
+                height:100%;
+                width:15rem;
+                margin: 1rem;
+                span{
+                    font-size: 0.8rem;
+                }
+            }
+            .info{
+                .logo{
+                    position: relative;
+                    width:100%;
+                    margin-bottom: 0.5rem;
+                    @include flex(space-between,center);
+                    .logoImg{
+                        height:2rem;
+                        width:2rem;
+                        padding:0.5rem;
+                        color:var(--acent-clr_bright);
+                        border-radius: 50%;
+                        box-shadow: 0 0 5px var(--acent-clr_dull);
+                        border:2px solid #fff;
+                        transform: scale(1.4);
+                        
+                    }
+                    .text{
+                        font-weight: bolder;
+                        font-size: 1.5rem;
+                        font-family: var(--logoFont);
+                    }
+                }
+            }
+            .contact{
+                @include flex(center,flex-start);
+                flex-direction: column;
+                gap: 0.5rem;
+                span{
+                    font-size: 0.8rem;
+                }
+            }
+            .feedback{
+                textarea{
+                    width:100%;
+                    height:7rem;
+                    resize: none;
+                    padding: 0.5rem;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                button{
+                    border: none;
+                    width: 5rem;
+                    height:2rem;
+                    border-radius: 10px;
+                    background: var(--primary-clr_light);
+                    color:var(--acent-clr_bright);
+                    font-weight: 700;
+                }
+            }
+        }
+        .developerDetails_Container{
+            margin: 0.5rem auto;
+            height:2rem;
+            width:7rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    .copyright{
+        text-align: center;
+        width:100%;
+    }
+}
+@include big-tablet{
+    .Footer{
+        .quote{
+            height: 15rem;
+        }
+        .container{
+            .SiteDetails_Container{
+                flex-direction: column;
+                .grid_Item{
+                    width:90%;
+                }
+                .info{
+                    .logo{
+                        @include flex(flex-start,center);
+                        .text{
+                            margin-left: 1rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
