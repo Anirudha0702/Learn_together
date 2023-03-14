@@ -6,7 +6,9 @@
 }
 html,body{
   height: 100%;
+  // overflow: hidden;
   font-family:sans-serif;
+  background-color: var(--acent-clr_dull);
 }
 h1,h2,h3,h4,h5,h6{
   overflow-wrap: break-word;
