@@ -31,10 +31,10 @@ const Footer=()=>{
                     </div>
                 </div>
                 <div className="developerDetails_Container">
-                    <Facebook className="Icon"/>
-                    <LinkedIn className="Icon"/>
-                    <GitHub className="Icon"/>
-                    <Instagram className="Icon"/>
+                    <a href=""><Facebook className="Icon"/></a>
+                    <a href="https://www.linkedin.com/in/anirudha-pradhan-346388240/"><LinkedIn className="Icon"/></a>
+                    <a href="https://github.com/Anirudha0702"><GitHub className="Icon"/></a>
+                    <a href=""><Instagram className="Icon"/></a>
                 </div>
                 <div className="copyright">
                    

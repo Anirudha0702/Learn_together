@@ -5,6 +5,7 @@
     color:var(--acent-clr_bright);
     @include flex(center,center);
     flex-direction: column;
+    flex-wrap: wrap;
     background: linear-gradient(70deg,var(--primary-clr_dark__Alpha),var(--primary-clr_light__Alpha)),url("../../Assets/footer_img.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -43,6 +44,7 @@
     }
     .container{
         background-color: var(--primary-clr_dark);
+        position: relative;
         width:100%;
         .SiteDetails_Container{
             position: relative;
@@ -118,6 +120,9 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            a{
+                color:var(--acent-clr_bright);
+            }
         }
     }
     .copyright{
