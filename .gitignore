@@ -4,7 +4,7 @@
 /node_modules
 /.npmrc
 /.pnp
-
+/api/.API.js
 .pnp.js
 # testing
 /coverage

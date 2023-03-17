@@ -1,3 +1,9 @@
 .Home{
     overflow-x: hidden;
+    .course{
+        text-align: center;
+        margin:2rem;
+        font-size: 2rem;
+        color:var(--clr_dark);
+    }
 }
