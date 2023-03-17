@@ -1,12 +1,7 @@
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import "./list.scss"
-import API from "../../api/API";
-const List=()=>{
-    const course= API();
-    console.log(course);
+const List=({course})=>{
     return(
-        <>
-        <h3 className="course">Our Most Popular Courses</h3>
         <div className="List">
             {
                 course.map((course,key)=>{
@@ -21,7 +16,6 @@ const List=()=>{
                 })
             }
         </div>
-        </>
     )
 }
 export default List;
