@@ -43,7 +43,12 @@
                 color:#fff;
                 font-size: 1.2rem;
                 font-weight: bolder;
-                
+                .Link{
+                    cursor: pointer;
+                    color:#fff;
+                    font-size: 1.2rem;
+                    text-decoration: none;
+                }
                 &::after{
                     content: "";
                     display: block;
@@ -108,6 +113,9 @@
                     margin-bottom: 1rem;
                     color:var(--primary-clr_dark);
                     display: block;
+                    .Link{
+                        color:var(--primary-clr_dark);
+                    }
                     &::after{
                         display: none;
                     }
