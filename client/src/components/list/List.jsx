@@ -1,4 +1,4 @@
-import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
+
 import "./list.scss"
 const List=({course})=>{
     return(

@@ -1,7 +1,4 @@
-import { Button, ButtonBase } from "@material-ui/core";
-import { InfoOutlined } from "@material-ui/icons";
-import { useEffect } from "react";
-import { useState } from "react";
+
 import Navbar from "../navbar/Navbar";
 import "./cover.scss";
 const Cover=()=>{

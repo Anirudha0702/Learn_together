@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./navbar.scss"
-import profileImg from "../../Assets/people.png"
 import { Link } from "react-router-dom";
-import { AccountCircle, People, SchoolSharp } from "@material-ui/icons";
+import { AccountCircle, SchoolSharp } from "@material-ui/icons";
 const Navbar=()=>{
     const [clicked,setClick]=useState(false);
     const  handleOpen=()=>{
