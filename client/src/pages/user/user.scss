@@ -6,6 +6,7 @@
        background-color: var(--primary-clr_dark);
        position: relative;
        padding-top: 0.5rem;
+       height: 4rem;
        width:100%;
        .coverImg{
         position: relative;
@@ -31,41 +32,125 @@
     }
     .userContainer{
         position: relative;
-        margin: 1.5rem auto;
-        width:70vw;
+        width:100%;
+        padding: 0 5rem;
+        margin: 3rem auto;
         background-color: var(--acent-clr_bright);
-        box-shadow: 0 0 10px 5px #00000021;    
-        @include flex(center,center);
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        // row-gap: 0.5rem;
+        // column-gap: 0.5rem;
+
+        grid-template-columns: repeat(2,0.8fr);
         .userInfo{
             position: relative;
-            width:100%;
-            @include flex(space-between,center);
+            width:25rem;
+            height:30rem;
+            margin: 0 1rem 0 0;
+            border-radius: 20px;
+            @include flex(space-around,center);
+            flex-direction: column;
             .details{
-                width:40%;
-                padding: 0.5rem;
+                position: relative;
+                width:80%;
+                text-align: center;
+                font-size: 1.5rem;
+                margin: 0.5rem auto;
                 color:var(--clr_dark);
                 span{
+                    text-align: left;
                     font-size: 0.8rem;
                     h3{
-                        font-size: 2rem;
+                        
+                        font-size: 1.5rem;
                     }
-                }
-                h3
-                span,h1{
-                    margin: 0.2rem;
                 }
             }
             .profile{
-                width:10rem;
-                height:10rem;
+                width:12rem;
+                height:12rem;
                 position: relative;
-                border-radius: 50%;
                 img{
                     position: absolute;
                     width:100%;
                     height:100%;
-                    border-radius: inherit;
                 }
+            }
+        }
+        .coursesIn{
+            position: relative;
+            max-width:50rem;
+            max-height:30rem;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap:0.5rem;
+            .course{
+                position: relative;
+                .img{
+                    width:100%;
+                    height:7rem;
+                    position: relative;
+                    img{
+                        position: absolute;
+                        width:100%;
+                        height:100%;
+                    }
+                }
+                span{
+                    font-size: 1.2rem;
+                    color:var(--clr_dark);
+                }
+            }
+        }
+    }
+}
+
+@include big-tablet{
+    .User{
+        .userContainer{
+            flex-wrap: wrap;
+            padding: 1rem;
+            justify-content: center;
+            gap:0.5rem;
+            .userInfo{
+                width:100%;
+                flex-direction: row;
+                height: auto;
+                margin: 0;
+                padding: 0 1rem;
+                border-radius: 0;
+                .profile{
+                    order:1;
+                }
+                .details{
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+@include mobile{
+    .User{
+        .userContainer{
+            height: auto;
+            .userInfo{
+                text-align: center;
+                padding:1rem 0 0 0 ;
+                flex-direction: column;
+                .profile{
+                    order: 0;
+                    border-radius: 50%;
+                    outline: 3px solid var(--primary-clr_dark);
+                    outline-offset: 5px;
+                    img{
+                        border-radius: inherit;
+                    }
+                }
+            }
+            .coursesIn{
+                grid-template-columns: 100%;
+                max-height: fit-content;
             }
         }
     }
