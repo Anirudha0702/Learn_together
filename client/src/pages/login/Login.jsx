@@ -1,6 +1,6 @@
 import { Facebook , LinkedIn, Person, Twitter} from "@material-ui/icons";
 import "./login.scss"
-
+import { Link } from "react-router-dom";
 const Login=()=>{
     return(
         <div className="Login">
@@ -15,7 +15,7 @@ const Login=()=>{
                     <button className="sign_in">Sign In</button>
 
                     <div className="link_conatiner">
-                        <span>Register</span>
+                        <span><Link to={"/register"}>Register</Link> </span>
                         <span>Forget password?</span>
                     </div>
                     <div className="icon_container">
