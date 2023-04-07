@@ -23,7 +23,7 @@ const Login=()=>{
                         <h6>Login With:</h6>
                         <FaFacebook className="Icon fb"/>
                         <FaInstagram className="Icon twitter"/>
-                        <FaLinkedin className="Icon twitter"/>
+                        <FaLinkedin className="Icon  twitter"/>
                     </div>
                 </div>
             </div>
