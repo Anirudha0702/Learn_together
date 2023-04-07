@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./navbar.scss"
 import { Link } from "react-router-dom";
-import { AccountCircle, SchoolSharp } from "@material-ui/icons";
+import {  FaSchool } from "react-icons/fa";
+import {RiAccountCircleFill} from "react-icons/ri"
 const Navbar=()=>{
     const [clicked,setClick]=useState(false);
     const  handleOpen=()=>{
@@ -10,7 +11,7 @@ const Navbar=()=>{
     return( 
         <div className="Navbar">
             <div className="logo">
-                <SchoolSharp className="logoImg"/>
+                <FaSchool className="logoImg"/>
                 <span className="text">Learn Together</span>
             </div>
             <div className="navItemContainer">
@@ -22,7 +23,9 @@ const Navbar=()=>{
                     <li className="item">Courses</li>
                     <li className="item"><Link className="Link" to={"/about"}>About</Link></li>
                     <li className="item">Contact Us</li>
-                    <li className="item"><Link className="Link" to ={"/login"}><div className="profile"><AccountCircle className="img"/></div></Link></li>
+                    <li className="item"><Link className="Link" to ={"/login"}><div className="profile">
+                        <RiAccountCircleFill className="img"/>
+                        </div></Link></li>
                 </ol>
             </div>
         </div>

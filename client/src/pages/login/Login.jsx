@@ -1,4 +1,5 @@
-import { Facebook , LinkedIn, Person, Twitter} from "@material-ui/icons";
+import {FaFacebook,FaLinkedin,FaInstagram} from "react-icons/fa"
+
 import "./login.scss"
 import { Link } from "react-router-dom";
 const Login=()=>{
@@ -20,9 +21,9 @@ const Login=()=>{
                     </div>
                     <div className="icon_container">
                         <h6>Login With:</h6>
-                        <Facebook className="Icon fb"/>
-                        <Twitter className="Icon twitter"/>
-                        <LinkedIn className="Icon twitter"/>
+                        <FaFacebook className="Icon fb"/>
+                        <FaInstagram className="Icon twitter"/>
+                        <FaLinkedin className="Icon twitter"/>
                     </div>
                 </div>
             </div>
