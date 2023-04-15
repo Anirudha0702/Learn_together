@@ -54,7 +54,7 @@
                     box-shadow: none;
                 }
             }
-            input,.sign_in{
+            input,.sign_up{
                 color: var(--clr_dark);
                 position: relative;
                 width:90%;
@@ -72,7 +72,7 @@
                     border-bottom: 1px solid var(--primary-clr_light);
                 }
             }
-            .sign_in{
+            .sign_up{
                 border-radius: 10px;
                 background: var(--primary-clr_light);
                 color:var(--acent-clr_bright);

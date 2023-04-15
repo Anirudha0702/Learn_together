@@ -14,7 +14,7 @@ function App() {
     },
     {
       path:"/login",
-      element:<Login/>
+      element:<Register/>
     },
     {
       path:"/about",
