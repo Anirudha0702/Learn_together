@@ -7,14 +7,22 @@ import User from './pages/user/User';
 import Login from "./pages/login/Login"
 import Register from './pages/register/Register';
 function App() {
+
+
+  const user=JSON.parse(localStorage.getItem("User"))||null;
+  console.log(user);
   const router=createBrowserRouter([
     {
       path:"/",
-      element:<Home/>,
+      element:user?<Home/>:<Login/>,
     },
     {
       path:"/login",
-      element:<Register/>
+      element:user?<Home/>:<Login/>
+    },
+    {
+      path:"/user",
+      element:<User/>
     },
     {
       path:"/about",

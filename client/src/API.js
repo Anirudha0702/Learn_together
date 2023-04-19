@@ -1,4 +1,6 @@
-const array=[
+import axios from "axios";
+
+export const array=[
     {
         "title":"Social Media Marketing",
         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit pellentesque porta.",
@@ -32,7 +34,28 @@ const array=[
 ]
 
 
-export default  function  API(){
-   
-    return array;
+export const createUser=async (user)=>{
+    console.log("createUser is called");
+    try {
+    
+        await axios.post(import.meta.env.API+"/register",user);
+        return true;
+        
+    } catch (error) {
+       return false;
+    }
+}
+export const findUser=async(_user)=>{
+    try {
+        const user= await axios.post("http://localhost:8050/api/authentication"+"/login",_user);
+    localStorage.setItem("User",JSON.stringify(user.data));
+    console.log(user.data);
+    return true;
+    } catch (error) {
+        return false;
+    }
+
+}
+export const logout=()=>{
+    localStorage.removeItem("user");
 }
