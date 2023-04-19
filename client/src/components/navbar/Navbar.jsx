@@ -20,8 +20,7 @@ const Navbar=()=>{
             </div>
             <div className="navItemContainer">
                 <div className="hamburgerMenu" onClick={handleNavToggle}>
-                    <GiHamburgerMenu/>
-                    <GiTireIronCross/>
+                    {clicked?<GiTireIronCross style={{transform:"scale(1.2)"}}/>:<GiHamburgerMenu style={{transform:"scale(1.2)"}}/>}
                 </div>
                 <ol className={clicked?"navList click":"navList"}>
                     <li className="item"><Link className="Link" to={"/"}>Home</Link></li>
