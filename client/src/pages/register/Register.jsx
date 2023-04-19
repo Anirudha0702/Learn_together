@@ -1,28 +1,28 @@
 import {FaFacebook,FaLinkedin,FaInstagram} from "react-icons/fa"
-import axios from "axios"
+
 import 'react-toastify/dist/ReactToastify.css';
 
 import{ToastContainer,toast} from "react-toastify"
 import "./register.scss"
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { createUser } from "../../API";
 const Register=()=>{
 
     const [userName,setUserName]=useState("")
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
     let navigate=useNavigate();
-    const createUser=async ()=>{
-        console.log("createUser is called");
-        
-        try {
-            await axios.post("http://localhost:8050/api/authentication/register",{email,password,userName});
+    const handleRegister=()=>{
+        const userCreated=createUser({userName,email,password});
+        if(userCreated){
+            toast.success('Registration is Successful');
             setTimeout(() => {
-                navigate("/");
+                navigate("/login");
             }, 3000);
-        } catch (error) {
-            console.log(error)
-            toast.error("Cann'tr complete the registration")
+        }
+        else{
+            toast.error("Faild to register");
         }
     }
     return(
@@ -37,16 +37,7 @@ const Register=()=>{
                     {/* <label htmlFor="password">Password</label> */}
                     <input type="password" name="" id="" placeholder="Enter Password"onChange={(e)=>{setPassword(e.target.value)}}/>
                     <label htmlFor="" id="rememberMe"><input type="checkbox" name="" id="chkbx" /> Remember Me</label>
-                    <button className="sign_up" onClick={()=>createUser() & toast.success('Registration is Successful', {
-                        position: "top-left",
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored",
-                        }) }>Sign Up</button>
+                    <button className="sign_up" onClick={()=>handleRegister()}>Sign Up</button>
 
                     <div className="link_conatiner">
                         <span><Link to={"/login"}>Login</Link></span>
