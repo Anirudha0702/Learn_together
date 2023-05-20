@@ -12,7 +12,11 @@ async function main(){
     .catch(err => console.log(err))
 }
 main().catch(err => console.log(err))
-app.use(cors())
+app.use(cors({
+    origin: "*",
+    methods : ["GET", "POST","DELETE","PUT"],
+    credentials: true
+}))
 app.use(express.json());
 app.use("/api/authentication",authenticationRoute)
 
