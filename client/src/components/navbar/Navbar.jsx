@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./navbar.scss"
+import {useSelector} from "react-redux"
 import { Link } from "react-router-dom";
 import {  FaSchool } from "react-icons/fa";
 import {GiHamburgerMenu,GiTireIronCross} from "react-icons/gi"
@@ -10,8 +11,7 @@ const Navbar=()=>{
     const  handleNavToggle=()=>{
         setClick(!clicked);
     }
-    const user=JSON.parse(localStorage.getItem("User"));
-    console.log(user);
+    const user=useSelector(state=>state.user.user)
     return( 
         <div className="Navbar">
             <div className="logo">
@@ -29,7 +29,7 @@ const Navbar=()=>{
                     <li className="item">Contact Us</li>
                     <li className="item"><Link className="Link" to ="/user">
                         <div className="profile">
-                        <img src={user.profileImg} alt="dssgv" />
+                        <img src={user.dp} alt="dssgv" />
                         </div>
                         </Link></li>
                 </ol>
