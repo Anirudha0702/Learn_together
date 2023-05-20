@@ -2,109 +2,61 @@
 .User{
     position: relative;
     width:100vw;
-    .cover{
-       background-color: var(--primary-clr_dark);
-       position: relative;
-       padding-top: 0.5rem;
-       height: 4rem;
-       width:100%;
-       .coverImg{
+    .nav-wrapper{
         position: relative;
-        margin-top: 0.5rem;
         width:100%;
-        height:50vh;
-        img{
-            position: absolute;
-            width:100%;
-            height:100%;
-            object-fit: fill;
-        }
-        .addCvr{
-            background-color: #000000b4;
-            position: absolute;
-            width:3rem;
-            height:2rem;
+        height:100vh;
+        background-color: var(--primary-clr_dark);
+        background-image:linear-gradient(45deg,var(--primary-clr_light__Alpha),transparent);
+        background-size: 4rem 4rem;
+        background-attachment: fixed;
+        padding-top: 1rem;
+        .user-wrapper{
+            --width:50%;
+            --height:20rem;
+            position:absolute;
+            width:var(--width);
+            height: var(--height);
             color:var(--acent-clr_bright);
-            right:2rem;
-            bottom:2rem;
-        }
-       }
-    }
-    .userContainer{
-        position: relative;
-        width:100%;
-        padding: 0 5rem;
-        margin: 3rem auto;
-        background-color: var(--acent-clr_bright);
-        display:flex;
-        justify-content: space-around;
-        align-items: center;
-        // row-gap: 0.5rem;
-        // column-gap: 0.5rem;
-
-        grid-template-columns: repeat(2,0.8fr);
-        .userInfo{
-            position: relative;
-            width:25rem;
-            height:30rem;
-            margin: 0 1rem 0 0;
-            border-radius: 20px;
-            @include flex(space-around,center);
+            top:calc( 50% - var(--height) / 2);
+            left:calc( 50% - var(--width) / 2);
+            @include flex(center,center);
+            gap:0.5rem;
             flex-direction: column;
-            .details{
+            .dp-wrapper{
+                width:70%;
+                max-width: 15rem;
+                aspect-ratio: 1;
                 position: relative;
-                width:80%;
-                text-align: center;
-                font-size: 1.5rem;
-                margin: 0.5rem auto;
-                color:var(--clr_dark);
-                span{
-                    text-align: left;
-                    font-size: 0.8rem;
-                    h3{
-                        
-                        font-size: 1.5rem;
-                    }
-                }
-            }
-            .profile{
-                width:12rem;
-                height:12rem;
-                position: relative;
+                border-radius: 50%;
                 img{
                     position: absolute;
                     width:100%;
-                    height:100%;
+                    height: 100%;
+                    border-radius: inherit;
                 }
             }
-        }
-        .coursesIn{
-            position: relative;
-            max-width:50rem;
-            max-height:30rem;
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap:0.5rem;
-            .course{
+            button{
                 position: relative;
-                .img{
-                    width:100%;
-                    height:7rem;
-                    position: relative;
-                    img{
-                        position: absolute;
-                        width:100%;
-                        height:100%;
-                    }
-                }
-                span{
-                    font-size: 1.2rem;
-                    color:var(--clr_dark);
+                width:15rem;
+                height: 2.5rem;
+                border: none;
+                border-radius: 20px;
+                color:var(--primary-clr_light);
+                font-size: 1em;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.2s ease-in-out;
+                &:hover{
+                    transform: scale(1.2);
+                    box-shadow: 0 0 5px var(--acent-clr_dull);
                 }
             }
         }
     }
+    
 }
+
 
 @include big-tablet{
     .User{
