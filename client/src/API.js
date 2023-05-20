@@ -1,6 +1,9 @@
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "./State/Slice";
 
-export const array=[
+//array must be  be replaced
+export const array=[ 
     {
         "title":"Social Media Marketing",
         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit pellentesque porta.",
@@ -35,27 +38,29 @@ export const array=[
 
 
 export const createUser=async (user)=>{
-    console.log("createUser is called");
     try {
-    
-        await axios.post(import.meta.env.API+"/register",user);
+        await axios.post(`${process.env.REACT_APP_API}/register`,user);
         return true;
         
     } catch (error) {
+        console.log(`got this error :(\n ${error.message}`)
        return false;
     }
 }
 export const findUser=async(_user)=>{
-    try {
-        const user= await axios.post("http://localhost:8050/api/authentication"+"/login",_user);
-    localStorage.setItem("User",JSON.stringify(user.data));
-    console.log(user.data);
-    return true;
-    } catch (error) {
-        return false;
-    }
 
+    try {
+        const user= await axios.post(`http://192.168.43.85:8050/api/authentication/login`,_user);
+        localStorage.setItem("User",JSON.stringify(user.data)); 
+        console.log("hello")       
+        return user.data;
+    } 
+    catch (error) {
+        console.log(`got this error:(\n ${error.message}`)
+    }
 }
-export const logout=()=>{
-    localStorage.removeItem("user");
+export const LogOut=()=>{
+    localStorage.removeItem("User");
+    const dispatch=useDispatch();
+    dispatch(setUser(null));
 }

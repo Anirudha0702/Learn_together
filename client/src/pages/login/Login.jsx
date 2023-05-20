@@ -1,23 +1,24 @@
 import {FaFacebook,FaLinkedin,FaInstagram} from "react-icons/fa"
 import {useState} from "react"
 import "./login.scss"
-import { Link ,useNavigate} from "react-router-dom";
+import { Link} from "react-router-dom";
 import{ToastContainer,toast} from "react-toastify"
 import {findUser} from "../../API"
+import { useDispatch } from "react-redux";
+import { setUser } from "../../State/Slice";
+
 const Login=()=>{
-    const navigate=useNavigate();
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
-    const handleLogin=()=>{
-        const found=findUser({password,email});
-        if(found){
-            toast.success('logged in..');
-            setTimeout(() => {
-                navigate("/");
-            }, 3000);
+    const dispatch=useDispatch();
+    const handleLogin= async (e)=>{
+        e.preventDefault();
+        try{ 
+            await findUser({password,email}).then((data)=>{dispatch(setUser(data))});        
         }
-        else{
+        catch(err){
             toast.error("Faild to login ");
+            console.log(err)
         }
     }
     return(
@@ -33,7 +34,7 @@ const Login=()=>{
                     <input type="password" name=""  placeholder="Enter Password" onChange={(e)=>{
                         setPassword(e.target.value)
                     }}/>
-                    <button className="sign_in" onClick={handleLogin}>Sign In</button>
+                    <button className="sign_in" onClick={(e)=>handleLogin(e) && toast.success("login success")}>Sign In</button>
 
                     <div className="link_conatiner">
                         <span><Link to={"/register"}>Register</Link> </span>

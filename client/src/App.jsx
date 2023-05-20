@@ -6,19 +6,18 @@ import { RouterProvider, createBrowserRouter} from 'react-router-dom';
 import User from './pages/user/User';
 import Login from "./pages/login/Login"
 import Register from './pages/register/Register';
+import { useSelector } from 'react-redux';
+
 function App() {
-
-
-  const user=JSON.parse(localStorage.getItem("User"))||null;
-  console.log(user);
+  const user=useSelector(state=>state.user.user)
   const router=createBrowserRouter([
     {
       path:"/",
-      element:user?<Home/>:<Login/>,
+      element: user!=null?<Home/>:<Login/>,
     },
     {
       path:"/login",
-      element:user?<Home/>:<Login/>
+      element:user!=null?<Home/>:<Login/>
     },
     {
       path:"/user",
@@ -34,7 +33,7 @@ function App() {
     }
   ])
   return (
-    <div className="App">
+      <div className="App">
       <RouterProvider router={router}/>
     </div>
   );
