@@ -2,45 +2,36 @@
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import "./user.scss";
-import profile from "../../Assets/MYiMG.jpeg";
-import {AiTwotoneEdit} from "react-icons/ai";
-import API from "../../API";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../State/Slice";
+import {BsFillGearFill} from "react-icons/bs";
+import { useSelector } from "react-redux";
+import {  Link, useNavigate } from "react-router-dom";
 const User=()=>{
-    const courseArray=API();
+    // const courseArray=array;
+    const navigate=useNavigate();
+    const dispatch=useDispatch();
+    const user_obj=useSelector(state=>state.user.user);
+    const HandelLogout=()=>{
+        localStorage.removeItem("User");
+        
+        dispatch(setUser(null));
+        navigate("/")
+    }
     return(
         <div className="User">
-            <div className="cover">
+            <div className="nav-wrapper">
                 <Navbar/>
-                {/* <div className="coverImg">
-                    <img src={cover} alt="" />
-                    <MdAddAPhoto className="addCvr"/>
-                </div> */}
+                <div className="user-wrapper">
+                    <div className="dp-wrapper">
+                        <img src={user_obj.dp} alt="" />
+                    </div>
+                    <h3><Link style={{color:"#fff"}}to={"/setting"}>{user_obj.user} <BsFillGearFill  style={{cursor:"pointer"}}/></Link></h3>
+                    <span>{user_obj.email}</span>
+                    <button type="submit" onClick={HandelLogout}>Logout</button>
+                </div>
             </div>
-            <div className="userContainer">
-                <div className="userInfo">
-                    <div className="profile">
-                        <img src={profile} alt="" />
-                    </div>
-                    <div className="details">
-                        <h3>Anirudha Pradhan <AiTwotoneEdit/></h3>
-                        <span>anirudhapradhan403@gmail.com</span>
-                        <span><h3>Bio</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eveniet laborum deleniti excepturi voluptatem illum ipsum qui totam dolore animi delectus consequatur aliquam, quo sequi fugiat reiciendis soluta sunt iure!</span>
-                    </div>
-                </div>
-                <div className="coursesIn">
-                    {
-                        courseArray.map((course,key)=>{
-                            return(
-                                <div className="course">
-                                    <div className="img">
-                                        <img src={course.image} alt="" />
-                                    </div>
-                                    <span>{course.title}</span>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
+            <div className="cover-bg">
             </div>
             <Footer/>
 	    </div>

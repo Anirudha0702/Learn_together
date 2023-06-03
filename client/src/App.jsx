@@ -7,7 +7,7 @@ import User from './pages/user/User';
 import Login from "./pages/login/Login"
 import Register from './pages/register/Register';
 import { useSelector } from 'react-redux';
-
+import Setting from './pages/setting/Setting';
 function App() {
   const user=useSelector(state=>state.user.user)
   const router=createBrowserRouter([
@@ -21,7 +21,11 @@ function App() {
     },
     {
       path:"/user",
-      element:<User/>
+      element:<User/>,
+    },
+    {
+      path:"/setting",
+      element:<Setting/>,
     },
     {
       path:"/about",

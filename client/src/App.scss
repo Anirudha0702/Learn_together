@@ -5,7 +5,7 @@
 --primary-clr_light:hsl(206, 86%, 37%);
 --primary-clr_light__Alpha:hsla(206, 86%, 37%,0.500);
 --acent-clr_bright:hsl(0, 0%, 100%);
---acent-clr_dull:hsla(0, 0%, 90%, 0.144);
+--acent-clr_dull:hsla(0, 0%, 90%, 0.219);
 --clr_dark:hsla(0, 0%, 0%, 0.781);
 --clr_light:hsla(0, 0%, 0%, 0.26);
 --logoFont:'Bebas Neue', cursive;
@@ -14,7 +14,7 @@
 }
 @mixin flex($justify,$aligin){
     display: flex;
-    justify-content: $justify;;
+    justify-content: $justify;
     align-items: $aligin;
 }
 @mixin position($TOP,$LEFT,$t_X,$T_Y){

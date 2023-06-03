@@ -1,0 +1,102 @@
+@import "../../App.scss";
+.wrapper{
+    width:100svw;
+    height:100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7884bbb6;
+    flex-direction: column;
+    gap: 0.5rem;
+    .photo_update{
+        padding: 1rem 0;
+        border-radius: 10px;
+        color:var(--clr_dark);
+        width:35%;
+        position: relative;
+        max-width: 15rem;
+        height:15rem;
+        display: flex;
+        gap:0.5rem;
+        flex-direction: column;
+        background-color: var(--acent-clr_bright);
+        align-items: center;
+        .dp_wrapper{
+            width:7rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            position: relative;
+            img{
+                position: absolute;
+                height:100%;
+                width:100%;
+                border-radius: inherit;
+            }
+        }
+        .label input[type="file"] {
+            position: absolute;
+            top:-1000px;
+          }
+          .label {
+            cursor: pointer;
+            // border: 1px solid #cccccc;
+            border-radius: 5px;
+            padding: 5px 15px;
+            margin: 5px;
+            background: #dddddd;
+            display: inline-block;
+          }
+          .label:hover {
+            background: var(--primary-clr_dark);
+            color:var(--acent-clr_bright);
+          }
+          .label:active {
+            background: #9fa1a0;
+          }
+          .label:invalid+span {
+            color: #000000;
+          }
+          .label:valid+span {
+            color: #ffffff;
+          }
+    }
+    .info_update{
+        position: relative;
+        width:40%;
+        height: 17rem;
+        padding: 1rem 0;
+        border-radius: 10px;
+        background-color: var(--acent-clr_bright);
+        .form{
+            position: absolute;
+            width:100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input{
+                border:none;
+                border-bottom: 1px solid var(--clr_dark);
+                width:90%;
+                height:2rem;
+                padding-left: 0.3rem;
+                &:focus{
+                    outline: none;
+                }
+            }
+            button[type="submit"]{
+                width:4rem;
+                height:2rem;
+                background: var(--primary-clr_dark);
+                color:var(--acent-clr_bright);
+                border: none;
+                cursor: pointer;
+                margin: 1rem 0;
+                border-radius: 10px;
+                &:disabled{
+                     opacity: 0.5;
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import { setUser } from "./State/Slice";
+
 
 //array must be  be replaced
 export const array=[ 
@@ -52,15 +51,9 @@ export const findUser=async(_user)=>{
     try {
         const user= await axios.post(`http://192.168.43.85:8050/api/authentication/login`,_user);
         localStorage.setItem("User",JSON.stringify(user.data)); 
-        console.log("hello")       
         return user.data;
     } 
     catch (error) {
         console.log(`got this error:(\n ${error.message}`)
     }
-}
-export const LogOut=()=>{
-    localStorage.removeItem("User");
-    const dispatch=useDispatch();
-    dispatch(setUser(null));
 }
