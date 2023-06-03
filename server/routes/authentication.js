@@ -29,7 +29,9 @@ router.post("/login",async (req,res)=>{
             res.status(201).json({
                 user:user.userName,
                 dp:user.profileImg,
-                email:user.email
+                email:user.email,
+                id:user._id,
+                createdAt:user.createdAt
             });
          }
          else{
